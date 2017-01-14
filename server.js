@@ -1,6 +1,7 @@
 const express = require('express');
 const hbs = require('hbs');
 const fs = require('fs');
+const port = process.env.PORT || 3000;
 var app = express();
 hbs.registerPartials(__dirname + '/views/partials');
 hbs.registerHelper('getCurrentYear', () => {
@@ -27,8 +28,8 @@ app.get('/', (req, res) => {
         title: 'This is the main page',
         welcome: 'Welcome on our site, have a nice stay!'
     })
-}).listen(3000, () => {
-    console.log('Serving on port 3000');
+}).listen(port, () => {
+    console.log(`Serving on port ${port}`);
 });
 
 app.get('/about', (req, res) => {
