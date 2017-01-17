@@ -38,3 +38,9 @@ app.get('/about', (req, res) => {
         temp: 'template',
     });
 });
+app.get('/projects', (req, res) => {
+    res.render('projects.hbs', {
+        title: 'This is the PROJECTS page',
+        temp: 'template',
+    });
+});
